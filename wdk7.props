@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_PropertySheetDisplayName>wdk7</_PropertySheetDisplayName>
+    <LibraryPath>C:\WINDDK\7600.16385.1\lib\Crt\$(PlatformTarget);C:\WINDDK\7600.16385.1\lib\Win7\$(PlatformTarget);$(VCInstallDir)lib\$(PlatformTarget);$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib\$(PlatformTarget);$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib\$(PlatformTarget);$(FrameworkSDKDir)\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\WINDDK\7600.16385.1\inc\api\crt\stl70;C:\WINDDK\7600.16385.1\inc\api;C:\WINDDK\7600.16385.1\inc\ddk;C:\WINDDK\7600.16385.1\inc\crt;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>_STL70_;vsnprintf=_vsnprintf;snwprintf=_snwprintf;CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link />
+    <Link>
+      <MinimumRequiredVersion>5.02</MinimumRequiredVersion>
+      <AdditionalDependencies>msvcprt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

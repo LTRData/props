@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Optimization>Full</Optimization>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <CompileAsManaged>Pure</CompileAsManaged>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>NotSet</TargetMachine>
+      <CLRImageType>ForcePureILImage</CLRImageType>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <AssemblyDebug Condition="'$(UseDebugLibraries)' == 'true'">true</AssemblyDebug>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>%(Command)
+if "$(TargetExt)" neq ".lib" "$(SDK40ToolsPath)\CorFlags.exe" "$(TargetPath)" /32BIT- /nologo</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <CallingConvention />
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
